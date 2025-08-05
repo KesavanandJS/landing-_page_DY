@@ -1,0 +1,260 @@
+.about {
+    padding: 120px 0;
+    background: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark animated background specifically for about section */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(102, 126, 234, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
+    animation: aboutBgFloat 12s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Dark floating particles animation */
+.about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="150" cy="200" r="2" fill="rgba(102,126,234,0.4)" opacity="0.6"><animate attributeName="cy" values="200;180;200" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="1.5" fill="rgba(240,147,251,0.5)" opacity="0.7"><animate attributeName="cy" values="300;320;300" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0.3;0.7" dur="5s" repeatCount="indefinite"/></circle><circle cx="300" cy="600" r="1" fill="rgba(79,172,254,0.6)" opacity="0.8"><animate attributeName="cy" values="600;590;600" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/></circle><circle cx="700" cy="150" r="2.5" fill="rgba(102,126,234,0.3)" opacity="0.5"><animate attributeName="cy" values="150;140;150" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0.9;0.5" dur="6s" repeatCount="indefinite"/></circle></svg>');
+    animation: particleFloat 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Enhanced dark image wrapper */
+.image-wrapper {
+    width: 400px;
+    height: 500px;
+    background: var(--primary-gradient);
+    background-size: 200% 200%;
+    animation: imageGradientShift 6s ease-in-out infinite;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Dark animated overlay for image wrapper */
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, transparent 30%, rgba(255, 255, 255, 0.02) 70%, transparent 100%);
+    animation: imageShimmer 4s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/madhu-profile.jpg') center/cover;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+.profile-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    position: relative;
+    z-index: 0;
+    transition: var(--transition);
+}
+
+.image-wrapper:hover .profile-main-img {
+    transform: scale(1.05);
+}
+
+.profile-emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.achievement-badges {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.badge {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.badge:first-child {
+    top: 20px;
+    right: -20px;
+    animation-delay: 0s;
+}
+
+.badge:last-child {
+    bottom: 40px;
+    left: -30px;
+    animation-delay: 1.5s;
+}
+
+.badge i {
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+.badge span {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.about-text h3 {
+    font-size: 1.5rem;
+    background: var(--secondary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.journey-points {
+    margin-bottom: 40px;
+}
+
+.journey-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.journey-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateX(10px);
+}
+
+.journey-item i {
+    color: #667eea;
+    font-size: 1.2rem;
+    min-width: 20px;
+}
+
+.journey-item span {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.certifications h4 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.cert-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.cert-badge {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.cert-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    
+    .image-wrapper {
+        width: 300px;
+        height: 400px;
+    }
+    
+    .badge {
+        position: relative;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        display: inline-flex;
+        margin: 10px;
+    }
+    
+    .achievement-badges {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+}
